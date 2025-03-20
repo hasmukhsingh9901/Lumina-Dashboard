@@ -12,7 +12,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
-    // Get from localStorage or default to system
+   
     const savedTheme = localStorage.getItem('theme') as Theme | null;
     return savedTheme || 'system';
   });
@@ -20,10 +20,10 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const root = window.document.documentElement;
     
-    // Remove old class
+  
     root.classList.remove('light', 'dark');
     
-    // Determine which theme to use
+ 
     let resolvedTheme: 'light' | 'dark';
     
     if (theme === 'system') {
@@ -32,14 +32,14 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       resolvedTheme = theme;
     }
     
-    // Add the appropriate class
+  
     root.classList.add(resolvedTheme);
     
-    // Save to localStorage
+   
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-  // Set up a listener for system theme changes
+  
   useEffect(() => {
     if (theme !== 'system') return;
     
