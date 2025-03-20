@@ -1,69 +1,104 @@
-# Welcome to your Lovable project
+# Dashboard Application
 
-## Project info
+A fully functional, dynamic dashboard application built with  React, and Tailwind CSS. This project includes authentication, API data fetching, and a responsive user interface.
 
-**URL**: https://lovable.dev/projects/1b4129fd-8634-4a97-bd34-2aa73e3e2fa0
+## 📋 Features
 
-## How can I edit this code?
+- **User Authentication**
+  - Login/Logout functionality
+  - JWT token-based authentication
+  - Form validation (email format, password length)
+  - Protected routes
 
-There are several ways of editing your application.
+- **Dashboard**
+  - Responsive layout
+  - Data visualization with tables
+  - API data fetching
+  - Search and filter functionality
+  - Pagination
 
-**Use Lovable**
+- **UI Components**
+  - Reusable React components
+  - Tailwind CSS for styling
+  - Mobile-friendly design
+  - Loading states and error handling
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1b4129fd-8634-4a97-bd34-2aa73e3e2fa0) and start prompting.
+## 🚀 Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js 18.0 or higher
+- npm or yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+1. Clone the repository
+```bash
+git clone https://github.com/username/abc.git
+cd project-name
 ```
 
-**Edit a file directly in GitHub**
+2. Install dependencies
+```bash
+npm install
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
 
-**Use GitHub Codespaces**
+3. Run the development server
+```bash
+npm run dev
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
 
-## What technologies are used for this project?
+## 🔑 Authentication
 
-This project is built with .
+The application uses JWT tokens for authentication:
+- Tokens are stored in localStorage
+- Protected routes redirect to login if no token is found
+- API requests include authentication headers
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Default credentials for testing:
+- Email: user@example.com
+- Password: password123
 
-## How can I deploy this project?
+## 📊 API Integration
 
-Simply open [Lovable](https://lovable.dev/projects/1b4129fd-8634-4a97-bd34-2aa73e3e2fa0) and click on Share -> Publish.
+The dashboard fetches data from [JSONPlaceholder](https://jsonplaceholder.typicode.com/posts) and includes:
+- Client-side filtering
+- Pagination (5 posts per page)
+- Error handling for failed requests
 
-## I want to use a custom domain - is that possible?
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+
+## 💻 Technology Stack
+
+- **UI Library**: React 18
+- **Styling**: Tailwind CSS
+- **Authentication**: JWT (jsonwebtoken)
+- **API**: REST API integration with fetch
+
+## 🔍 Usage
+
+1. **Login Screen**
+   - Enter your credentials (email and password)
+   - Form validation will check for proper email format and password length
+
+2. **Dashboard**
+   - View data in a paginated table
+   - Use the search box to filter by title or ID
+   - Navigate between pages using the pagination controls
+
+
+### Running production build
+
+```bash
+npm start
+
+```
+
+
+## 🙏 Acknowledgments
+
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
