@@ -31,8 +31,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       
       if (token) {
         try {
-          // In a real app, you would validate the token with your backend
-          // For demo purposes, we'll just decode a mock user from the token
           setUser({
             id: '1',
             username: 'demo_user',
@@ -55,9 +53,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setIsLoading(true);
     
     try {
-      // Simulate API call - in real app, this would be a fetch to your auth endpoint
+
       if (email === 'user@example.com' && password === 'password') {
-        // Mock successful login
+      
         const mockToken = 'mock_jwt_token_' + Date.now();
         
         // Store token
