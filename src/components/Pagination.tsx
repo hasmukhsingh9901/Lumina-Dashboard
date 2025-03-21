@@ -9,7 +9,6 @@ interface PaginationProps {
 }
 
 const Pagination = ({ currentPage, totalPages, onPageChange }: PaginationProps) => {
-  // No need to render pagination if there's only one page
   if (totalPages <= 1) return null;
   
   // Calculate range of pages to show

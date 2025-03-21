@@ -15,7 +15,7 @@ export interface PostsResponse {
 
 const API_URL = 'https://jsonplaceholder.typicode.com';
 
-// Helper function to handle API responses
+
 const handleResponse = async (response: Response) => {
   if (!response.ok) {
     const errorData = await response.json().catch(() => ({}));
@@ -32,11 +32,10 @@ const getAuthHeaders = () => {
 };
 
 export const api = {
-  // Fetch posts with pagination, search, and filtering
+ 
   async getPosts(page: number = 1, limit: number = 5, search: string = '', filterById: string = ''): Promise<PostsResponse> {
     try {
-      // In a real app, these params would be sent to the server
-      // For JSONPlaceholder, we'll fetch all and filter client-side
+  
       const response = await fetch(`${API_URL}/posts`, {
         headers: {
           ...getAuthHeaders()
@@ -45,7 +44,7 @@ export const api = {
       
       const allPosts: Post[] = await handleResponse(response);
       
-      // Filter posts based on search and filterById
+      
       let filteredPosts = allPosts;
       
       if (search) {
